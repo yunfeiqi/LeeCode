@@ -1,5 +1,7 @@
 package com.sam.samplesort;
 
+import com.sam.BaseFunc;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -10,20 +12,7 @@ import java.util.Random;
  * @Description:
  * @Date: 2022/6/29 23:29
  */
-public class SortBase {
-
-    // 数组生成器
-    public static int[] generator(int arrayLen){
-        int[] array = new int[arrayLen];
-
-        // 为Array 随机赋值
-        Random random = new Random();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(30);
-        }
-
-        return  array;
-    }
+public class SortBase extends BaseFunc {
 
     public static boolean compare(int[] input,int[] target){
         boolean flag = true;
@@ -41,27 +30,5 @@ public class SortBase {
         }
 
         return flag;
-    }
-
-    public static String join(int[] input){
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < input.length; i++) {
-            sb.append(input[i]);
-            sb.append(",");
-        }
-
-        return sb.toString();
-    }
-
-    /**
-     * 交换数组的元素
-     * @param input
-     * @param i
-     * @param j
-     */
-    public static void swap(int[] input,int i ,int j){
-        int tmp = input[i];
-        input[i] = input[j];
-        input[j] = tmp;
     }
 }
