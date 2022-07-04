@@ -20,17 +20,19 @@ public class SelectSort {
             int[] input = null;
             input  = generator(i);
 
-            int[] clone = input.clone();
+            int[] clone =new int[input.length];
+            System.arraycopy( input, 0, clone, 0, input.length );
 
             selectSort(input);
 
             if(!compare(clone,input)){
                 System.out.println(String.format("input:%s", join(input)));
                 System.out.println(String.format("clone:", join(clone)));
+                flag = false;
                 break;
+            }else {
+                flag = true;
             }
-
-            flag = true;
         }
 
         if(flag){
